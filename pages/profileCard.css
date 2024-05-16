@@ -1,0 +1,54 @@
+section {
+    padding: 1.25rem;
+
+    h1.title-profile-card {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 0.625rem;
+
+        @media only screen and (min-width: 62rem) {
+            padding-left: 2rem;
+            margin-bottom: 0;
+        }
+    }
+
+    ul.list-profile-card {
+
+        @media only screen and (min-width: 48rem) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0;
+            padding: 2rem;
+            gap: 1rem;
+        }
+
+        @media only screen and (min-width: 62rem) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        div.card {
+            background-color: #D971AA;
+            border: 0;
+            font-size: 1rem;
+            color: #034001;
+            margin-bottom: 1.25rem;
+            width: 18rem;
+            height: calc(100% + 0.3125rem);
+
+            h5 {
+                font-weight: 600;
+            }
+
+            p {
+                color: black;
+            }
+
+            .btn {
+                background-color: #034001;
+                color: #ffffff;
+            }
+        }
+    }
+}

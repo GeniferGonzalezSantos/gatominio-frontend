@@ -1,0 +1,25 @@
+div.container {
+    background-color: #D9A0BB;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    width: 50%;
+
+    .img-perfil {
+        background-color: #D971AA;
+    }
+
+    div {
+        .first-btn {
+            background-color: #034001;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .second-btn {
+            background-color: #D9A0BB;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
+}

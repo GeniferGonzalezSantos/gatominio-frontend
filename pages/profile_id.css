@@ -1,0 +1,77 @@
+section.containerProfile {
+    margin: 3.125rem;
+
+    a.nav-link {
+        color: #03A62C;
+        font-weight: 600;
+
+        :hover {
+            color: #034001;
+        }
+    }
+
+    .container {
+        width: 31.25rem;
+        height: auto;
+        margin: 1.25rem auto;
+        background-color: #56BF70;
+        border-radius: 0.5rem;
+        padding: 1.25rem;
+        box-shadow: 0 0 0.625rem #D971AA;
+        line-height: 1.875rem;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+    }
+
+    .profile img {
+        width: 6.25rem;
+        height: 6.25rem;
+        border-radius: 50%;
+        margin-right: 3.125rem;
+    }
+
+    .profile-info {
+        flex: 1;
+    }
+
+    .profile-info h2 {
+        font-weight: 600;
+    }
+
+    h3 {
+        font-weight: 600;
+        margin-bottom: 0.625rem;
+    }
+
+    .profile-info p {
+        margin: 0;
+    }
+
+    .formContainerConsulta {
+        background-color: #03A62C;
+        width: 31.25rem;
+        height: auto;
+        margin: 1.25rem auto;
+        background-color: #56BF70;
+        border-radius: 0.5rem;
+        padding: 1.25rem;
+        box-shadow: 0 0 0.625rem #D971AA;
+        line-height: 1.875rem;
+
+        h1 {
+            font-size: 1.125rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .btn {
+            background-color: #D971AA;
+            color: #ffffff;
+            font-weight: 600;
+            width: 6.25rem;
+        }
+
+    }
+}

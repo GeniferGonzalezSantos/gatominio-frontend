@@ -1,0 +1,23 @@
+main {
+    .navbar-loginArea {
+        height: 3.125rem;
+        background-color: #D971AA;
+
+        a.navbar-link {
+            color: #034001;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        a.navbar-link:hover {
+            color: #56BF70;
+        } 
+    }
+
+    section.containerLoginArea {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: #56BF70;
+    }
+}

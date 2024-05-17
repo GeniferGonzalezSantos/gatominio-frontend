@@ -7,6 +7,8 @@ import "./register.css";
 
 function Register() {
   const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+
   const [formData, setFormData] = useState({
     caracteristica: "",
     isCastrado: false,
@@ -18,7 +20,7 @@ function Register() {
     tutor: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
 
     setFormData({
@@ -27,12 +29,12 @@ function Register() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_API_SAVE_REGISTER_CAT,
+      const apiUrlSaveRegisterCat = process.env.NEXT_PUBLIC_API_SAVE_REGISTER_CAT
+      const response = await fetch(`${apiUrlSaveRegisterCat}`,
         {
           method: "POST",
           headers: {
@@ -48,7 +50,7 @@ function Register() {
         console.error("Erro ao criar usuário:", response.statusText);
       }
     } catch (error) {
-      console.error("Erro ao criar usuário:", error.message);
+      setError((error as Error).message);
     }
   };
 

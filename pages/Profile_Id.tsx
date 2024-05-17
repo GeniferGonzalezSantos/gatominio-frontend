@@ -4,11 +4,29 @@ import { useRouter } from "next/router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./profile_id.css";
 
+interface UserData {
+  id: string;
+  nome: string;
+  idade: number;
+  endereco: string;
+  tutor: string;
+  isCastrado: boolean;
+  isFiv: boolean;
+  isFelv: boolean;
+  caracteristica: string;
+  registroVeterinario: {
+    dataConsulta: string;
+    diagnostico: string;
+    motivo: string;
+    tratamento: string;
+  }[];
+}
+
 export default function Profile() {
   const router = useRouter();
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState("meusPets");
   const [formData, setFormDataVet] = useState({
     diagnostico: "",
@@ -22,28 +40,27 @@ export default function Profile() {
   }, [router.query.id]);
 
   const fetchData = async () => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_ID_GATO;
     if (!router.query.id) return;
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_API_ID_GATO + "/" + `${router.query.id}`
-      );
+      const response = await fetch(`${apiUrl}/${router.query.id}`);
       if (!response.ok) {
         throw new Error("Falha ao carregar os dados");
       }
       const userData = await response.json();
       setUserData(userData);
     } catch (error) {
-      setError(error.message);
+      setError((error as Error).message);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleTabClick = (tabName) => {
+  const handleTabClick = (tabName: React.SetStateAction<string>) => {
     setActiveTab(tabName);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     try {
@@ -64,11 +81,11 @@ export default function Profile() {
         console.error("Erro ao criar usuário:", response.statusText);
       }
     } catch (error) {
-      console.error("Erro ao criar usuário:", error.message);
+      console.error("Erro:", (error as Error).message);
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
 
     setFormDataVet({
@@ -77,7 +94,7 @@ export default function Profile() {
     });
   };
 
-  const handleRemoveRegister = async (itemId) => {
+  const handleRemoveRegister = async (itemId: string) => {
     try {
       const response = await fetch(
         process.env.NEXT_PUBLIC_API_DELETE_REGISTER_CAT + "/" + itemId,
@@ -90,9 +107,12 @@ export default function Profile() {
       } else {
         router.back();
       }
-      setData(data.filter((item) => item.id !== itemId));
+      setUserData((prevData) => prevData && {
+        ...prevData,
+        registroVeterinario: prevData.registroVeterinario.filter((item) => item.dataConsulta !== itemId),
+      });
     } catch (error) {
-      console.error("Erro:", error.message);
+      console.error("Erro:", (error as Error).message);
     }
   };
 
@@ -244,7 +264,7 @@ export default function Profile() {
           {activeTab === "vet" && (
             <div className="container">
               <h2>{userData.nome}</h2>
-              {userData.registroVeterinario.map((vet, index) => (
+              {userData.registroVeterinario.map((vet: { dataConsulta: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; diagnostico: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; motivo: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; tratamento: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; }, index: React.Key | null | undefined) => (
                 <div className="profile" key={index}>
                   <div className="profile-info">
                     <p>Dia da consulta: {vet.dataConsulta} </p>

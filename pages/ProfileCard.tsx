@@ -55,7 +55,7 @@ export default function ProfileCard() {
         {data?.map((item: UserData, index: number) => ( // Mudança aqui
           <li key={index}>
             <div className="card">
-              <img src="/gato.jpeg" className="card-img-top" alt="..." />
+              <img src="/gato.png" className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{item.nome}</h5>
                 <p className="card-text mt-3">{item.caracteristica}</p>

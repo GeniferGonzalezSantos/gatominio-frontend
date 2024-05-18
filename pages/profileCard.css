@@ -7,19 +7,15 @@ section {
         color: #ffffff;
         margin-bottom: 0.625rem;
 
-        @media only screen and (min-width: 62rem) {
-            padding-left: 2rem;
-            margin-bottom: 0;
-        }
     }
 
     ul.list-profile-card {
+        padding: 0;
 
         @media only screen and (min-width: 48rem) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin: 0;
-            padding: 2rem;
             gap: 1rem;
         }
 
@@ -36,6 +32,15 @@ section {
             margin-bottom: 1.25rem;
             width: 18rem;
             height: calc(100% + 0.3125rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 9.375rem;
+                height: 9.375rem;
+                margin-top: 1.25rem;
+            }
 
             h5 {
                 font-weight: 600;

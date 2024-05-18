@@ -163,7 +163,7 @@ export default function Profile() {
           {activeTab === "meusPets" && (
             <div className="container">
               <div className="profile">
-                <img src="/gato.jpeg" alt="User Avatar" />
+                <img src="/gato.png" alt="User Avatar" />
                 <div className="profile-info">
                   <h2>{userData.nome}</h2>
                   <p>Idade: {userData.idade}</p>
@@ -274,6 +274,7 @@ export default function Profile() {
                   </div>
                 </div>
               ))}
+              < hr />
             </div>
           )}
         </>

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from 'next/image';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./profileCard.css";
 
@@ -55,7 +56,7 @@ export default function ProfileCard() {
         {data?.map((item: UserData, index: number) => ( // Mudança aqui
           <li key={index}>
             <div className="card">
-              <img src="/gato.png" className="card-img-top" alt="..." />
+              <Image src="/gato.png" className="card-img-top" alt="..."  width={150} height={150}/>
               <div className="card-body">
                 <h5 className="card-title">{item.nome}</h5>
                 <p className="card-text mt-3">{item.caracteristica}</p>

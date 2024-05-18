@@ -24,6 +24,10 @@ section {
             grid-template-columns: 1fr 1fr 1fr;
         }
 
+        li {
+            list-style-type: none;
+        }
+
         div.card {
             background-color: #D971AA;
             border: 0;

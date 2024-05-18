@@ -59,7 +59,7 @@ function Register() {
       <div className="row m-1 p-1">
         <h1>Registre seu pet</h1>
         <div className="col-12 img-container">
-          <img src="/gato.png" className="img-fluid profile-img" alt="..." />
+          <img src="/gato.jpg" className="img-fluid profile-img" alt="..." />
         </div>
         <div className="col-6 form-floating">
           <input

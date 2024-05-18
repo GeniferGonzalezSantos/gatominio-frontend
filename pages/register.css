@@ -24,16 +24,13 @@
 
   div.img-container {
     margin-bottom: 1.25rem;
-
-    @media only screen and (min-width: 48rem) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     .img-fluid {
-      width: 18.75rem;
-      height: 18.75rem;
+      width: 9.375rem;
+      height: 9.375rem;
       border-radius: 0.25rem;
     }
   }

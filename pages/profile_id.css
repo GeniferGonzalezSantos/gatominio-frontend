@@ -1,5 +1,9 @@
 section.containerProfile {
-    margin: 3.125rem;
+    margin: 2.125rem;
+    
+    @media only screen and (min-width: 62rem) {
+        margin: 3.125rem;
+    }
 
     a.nav-link {
         color: #03A62C;
@@ -10,8 +14,16 @@ section.containerProfile {
         }
     }
 
+    ul {
+        width: max-content;
+
+        @media only screen and (min-width: 62rem) {
+            width: initial;
+        }
+    }
+
     .container {
-        width: 31.25rem;
+        width: 21.875rem;
         height: auto;
         margin: 1.25rem auto;
         background-color: #56BF70;
@@ -19,6 +31,10 @@ section.containerProfile {
         padding: 1.25rem;
         box-shadow: 0 0 0.625rem #D971AA;
         line-height: 1.875rem;
+
+        @media only screen and (min-width: 62rem) {
+            width: 31.25rem;
+        }
     }
 
     .profile {
@@ -29,8 +45,13 @@ section.containerProfile {
     .profile img {
         width: 6.25rem;
         height: 6.25rem;
-        border-radius: 50%;
-        margin-right: 3.125rem;
+        border-radius: 30%;
+        margin-right: 1.125rem;
+
+        @media only screen and (min-width: 62rem) {
+            margin-right: 3.125rem;
+            width: initial;
+        }
     }
 
     .profile-info {
@@ -52,7 +73,7 @@ section.containerProfile {
 
     .formContainerConsulta {
         background-color: #03A62C;
-        width: 31.25rem;
+        width: 21.875rem;
         height: auto;
         margin: 1.25rem auto;
         background-color: #56BF70;
@@ -60,6 +81,10 @@ section.containerProfile {
         padding: 1.25rem;
         box-shadow: 0 0 0.625rem #D971AA;
         line-height: 1.875rem;
+
+        @media only screen and (min-width: 62rem) {
+            width: 31.25rem;
+        }
 
         h1 {
             font-size: 1.125rem;
